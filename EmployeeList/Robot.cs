@@ -10,6 +10,7 @@ namespace EmployeeList
     {
         private string firstname;
         private int age;
+        private int length;
 
         //private int length;
 
@@ -19,7 +20,24 @@ namespace EmployeeList
         //    set { length = value; }
         //}
 
-        public int Length { get; set; }
+        public int Length 
+        {
+            get { return length; }
+            set
+            {
+
+                //  length = value < 0 ? 0 : value;
+
+                if (value < 0)
+                {
+                    length = 0;
+                }
+                else
+                {
+                    length = value;
+                }
+            }
+        }
        
         // public int Length2;
 
@@ -36,15 +54,15 @@ namespace EmployeeList
             firstname = name;
         }
 
-        public void SetFirstName(string newFirstName)
-        {
-            //Validate
-            firstname = newFirstName;
-        }
+        public void SetFirstName(string newFirstName) => firstname = newFirstName;
+        //{
+        //    //Validate
+        //    firstname = newFirstName;
+        //}
 
-        public string GetFirstName()
-        {
-            return firstname;
-        }
+        public string GetFirstName() => firstname;     //{
+        //    return firstname;
+        //}
+
     }
 }
