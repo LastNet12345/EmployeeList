@@ -59,6 +59,8 @@ namespace EmployeeList
             }
         }
 
+        public static int Count;
+
         // public int Length2;
 
         //3. Konstruktor
@@ -81,6 +83,7 @@ namespace EmployeeList
             //Validate
             this.age = age;
             firstname = name;
+            Count++;
         }
 
         //4. Metoder
