@@ -1,4 +1,6 @@
-﻿namespace EmployeeList
+﻿using EmployeeList.Helpers;
+
+namespace EmployeeList
 {
     internal class Program
     {
@@ -37,24 +39,8 @@
 
         private static void AddEmployee()
         {
-            string name;
-            bool success = false;
 
-            do
-            {
-                Console.WriteLine("Name: ");
-                 name = Console.ReadLine()!;
-
-                if (string.IsNullOrWhiteSpace(name))
-                {
-                    Console.WriteLine("You must enter a valid name");
-                }
-                else
-                {
-                    success = true;
-                }
-
-            } while (!success);
+            string name = Util.AskForString("Name");
 
 
             //Create new employee
