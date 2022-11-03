@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace EmployeeList.Helpers.MenyHelpers
 {
-    internal class MenyHelpers
+    public class MenyHelpers
     {
+        public const string Add = "1";
+        public const string Print = "2";
+        public const string Quit = "Q";
     }
 }

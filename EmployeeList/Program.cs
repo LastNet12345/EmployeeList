@@ -1,4 +1,5 @@
 ﻿using EmployeeList.Helpers;
+using EmployeeList.Helpers.MenyHelpers;
 
 namespace EmployeeList
 {
@@ -18,13 +19,13 @@ namespace EmployeeList
 
                 switch (input)
                 {
-                    case "1":
+                    case MenyHelpers.Add:
                         AddEmployee();
                         break;
-                    case "2":
+                    case MenyHelpers.Print:
                         PrintEmployees();
                         break;
-                    case "Q":
+                    case MenyHelpers.Quit:
                         Environment.Exit(0);
                         break;
                     default:
@@ -39,13 +40,10 @@ namespace EmployeeList
 
         private static void AddEmployee()
         {
-
             string name = Util.AskForString("Name");
             uint salary = Util.AskForUInt("Salary");
 
-
-            //Create new employee
-
+            payRoll.AddEmployee(name, salary);
         }
 
         private static void PrintEmployees()
@@ -60,19 +58,19 @@ namespace EmployeeList
 
         private static void ShowMainMeny()
         {
-            Console.WriteLine("1. add employee");
-            Console.WriteLine("2. print employee");
-            Console.WriteLine("Q. quit");
+            Console.WriteLine($"{MenyHelpers.Add}. add employee");
+            Console.WriteLine($"{MenyHelpers.Print}. print employee");
+            Console.WriteLine($"{MenyHelpers.Quit}. quit");
         }
 
         private static void SeedData()
         {
             payRoll.AddEmployee("Anna", 36000);
             payRoll.AddEmployee("Bengt", 30000);
-            payRoll.AddEmployee("Pelle", 45000);
+            payRoll.AddEmployee("Pelle", 4000);
             payRoll.AddEmployee("Lars", 60000);
             payRoll.AddEmployee("Anna", 35000);
-            payRoll.AddEmployee("Anna", 35000);
+            payRoll.AddEmployee("Anna", 5000);
         }
     }
 }
