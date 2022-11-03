@@ -7,37 +7,17 @@
         static void Main(string[] args)
         {
 
-            Employee kalle = new Employee("Kalle", 35000);
-            payRoll.AddEmployee(kalle);
-
-            List<Employee> employees = payRoll.GetEmplyees();
-            
-            Console.WriteLine(employees[0]);
-
-            // employees[0] = new Employee("Anna", 35);
-            employees[0].Name = "Anna";
-
-            Console.WriteLine(employees[0]);
-
-            List<Employee> afterReplace = payRoll.GetEmplyees();
-
-            Console.WriteLine(afterReplace[0]);
-
-            
-
-
-
             SeedData();
 
             do
             {
                 ShowMainMeny();
-                string input = Console.ReadLine();
+                string input = Console.ReadLine()!;
 
                 switch (input)
                 {
                     case "1":
-
+                        AddEmployee();
                         break;
                     case "2":
                         PrintEmployees();
@@ -52,6 +32,32 @@
 
 
             } while (true);
+
+        }
+
+        private static void AddEmployee()
+        {
+            string name;
+            bool success = false;
+
+            do
+            {
+                Console.WriteLine("Name: ");
+                 name = Console.ReadLine()!;
+
+                if (string.IsNullOrWhiteSpace(name))
+                {
+                    Console.WriteLine("You must enter a valid name");
+                }
+                else
+                {
+                    success = true;
+                }
+
+            } while (!success);
+
+
+            //Create new employee
 
         }
 
