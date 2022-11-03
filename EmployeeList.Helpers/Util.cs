@@ -31,5 +31,20 @@ namespace EmployeeList.Helpers
 
             return answer;
         }
+
+        public static uint AskForUInt(string prompt)
+        {
+            do
+            {
+                string input = AskForString(prompt);
+
+                if(uint.TryParse(input, out uint answer))
+                {
+                    return answer;
+                }
+
+            } while (true);
+
+        }
     }
 }

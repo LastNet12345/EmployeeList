@@ -9,10 +9,10 @@ namespace EmployeeList
     public class Employee
     {
         public string Name { get; set; }
-        public int Salary { get; }
+        public uint Salary { get; }
        
         //Konstruktor
-        public Employee(string name, int salary)
+        public Employee(string name, uint salary)
         {
             //Validate?
             Name = name;

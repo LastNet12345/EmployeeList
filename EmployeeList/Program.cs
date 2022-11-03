@@ -41,6 +41,7 @@ namespace EmployeeList
         {
 
             string name = Util.AskForString("Name");
+            uint salary = Util.AskForUInt("Salary");
 
 
             //Create new employee
