@@ -20,11 +20,15 @@ namespace EmployeeList
             Employee employee = new Employee(name, salary);
             payRoll.Add(employee);
         }
+        public void AddEmployee(Employee employee)
+        {
+            payRoll.Add(employee);
+        } 
 
         public List<Employee> GetEmplyees()
         {
-            //ToDo: Fix Not good!!!
-            return payRoll;
+            return payRoll.ToList();
         }
+
     }
 }

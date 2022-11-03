@@ -8,7 +8,7 @@ namespace EmployeeList
 {
     public class Employee
     {
-        public string Name { get; }
+        public string Name { get; set; }
         public int Salary { get; }
        
         //Konstruktor

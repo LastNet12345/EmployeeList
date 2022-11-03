@@ -6,6 +6,27 @@
         static PayRoll payRoll = new PayRoll();
         static void Main(string[] args)
         {
+
+            Employee kalle = new Employee("Kalle", 35000);
+            payRoll.AddEmployee(kalle);
+
+            List<Employee> employees = payRoll.GetEmplyees();
+            
+            Console.WriteLine(employees[0]);
+
+            // employees[0] = new Employee("Anna", 35);
+            employees[0].Name = "Anna";
+
+            Console.WriteLine(employees[0]);
+
+            List<Employee> afterReplace = payRoll.GetEmplyees();
+
+            Console.WriteLine(afterReplace[0]);
+
+            
+
+
+
             SeedData();
 
             do
