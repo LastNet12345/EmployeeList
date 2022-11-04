@@ -15,7 +15,7 @@
     
     public class MockUI : IUI
     {
-        public string SetInput { private get; set; } = "Default";
+        public string SetInput { private get; set; } = "1";
         public string GetInput()
         {
             return SetInput;

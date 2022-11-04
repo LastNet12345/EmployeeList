@@ -8,7 +8,7 @@ namespace EmployeeList
 {
     public class Employee
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public uint Salary { get; }
 
         public SalaryLevel SalaryLevel => Salary < 25000 ? SalaryLevel.Junior : SalaryLevel.Senior;
