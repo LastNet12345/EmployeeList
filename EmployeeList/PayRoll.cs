@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeList
 {
-    public class PayRoll
+    public class PayRoll : IPayRoll
     {
         private List<Employee> payRoll;
 
@@ -23,7 +23,7 @@ namespace EmployeeList
         public void AddEmployee(Employee employee)
         {
             payRoll.Add(employee);
-        } 
+        }
 
         public List<Employee> GetEmplyees()
         {

@@ -1,12 +1,14 @@
 ﻿using EmployeeList.Helpers;
 using EmployeeList.Helpers.MenyHelpers;
+using EmployeeList.UI;
 
 namespace EmployeeList
 {
     internal class Program
     {
 
-        static PayRoll payRoll = new PayRoll();
+        static IPayRoll payRoll = new PayRoll();
+        static IUI ui = new MockUI();
         static void Main(string[] args)
         {
 
@@ -15,7 +17,7 @@ namespace EmployeeList
             do
             {
                 ShowMainMeny();
-                string input = Console.ReadLine()!;
+                string input = ui.GetInput()!;
 
                 switch (input)
                 {
@@ -40,8 +42,8 @@ namespace EmployeeList
 
         private static void AddEmployee()
         {
-            string name = Util.AskForString("Name");
-            uint salary = Util.AskForUInt("Salary");
+            string name = Util.AskForString("Name", ui);
+            uint salary = Util.AskForUInt("Salary", ui);
 
             payRoll.AddEmployee(name, salary);
         }
@@ -52,15 +54,15 @@ namespace EmployeeList
 
             foreach (Employee employee in employees)
             {
-                Console.WriteLine(employee.ToString());
+                ui.Print(employee.ToString());
             }
         }
 
         private static void ShowMainMeny()
         {
-            Console.WriteLine($"{MenyHelpers.Add}. add employee");
-            Console.WriteLine($"{MenyHelpers.Print}. print employee");
-            Console.WriteLine($"{MenyHelpers.Quit}. quit");
+            ui.Print($"{MenyHelpers.Add}. add employee");
+            ui.Print($"{MenyHelpers.Print}. print employee");
+            ui.Print($"{MenyHelpers.Quit}. quit");
         }
 
         private static void SeedData()
