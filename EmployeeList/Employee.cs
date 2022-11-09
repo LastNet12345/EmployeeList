@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmployeeList
 {
-    public class Employee
+    public class Employee 
     {
         public string Name { get; }
         public uint Salary { get; }
@@ -30,6 +30,10 @@ namespace EmployeeList
         //Konstruktor
         public Employee(string name, uint salary)
         {
+            if (string.IsNullOrWhiteSpace(name))
+            {
+                throw new ArgumentException($"'{nameof(name)}' cannot be null or whitespace.", nameof(name));
+            }
             //Validate?
             Name = name;
             Salary = salary;
@@ -39,6 +43,10 @@ namespace EmployeeList
         {
             return $"Name: {Name} Salary: {Salary} SalaryLevel: {SalaryLevel}";
         }
+
+
+
+
 
     }
 }

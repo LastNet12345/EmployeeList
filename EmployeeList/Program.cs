@@ -22,8 +22,34 @@ namespace EmployeeList
             IPayRoll payRoll = new PayRoll();
             IUI ui = new ConsoleUI();
 
+
             Main main = new Main(ui, payRoll);
-            main.Run();
+       //     main.Run();
+
+            try
+            {
+            Employee emp = new Employee(null, 23);
+
+            }
+            catch (ArgumentNullException e)
+            {
+
+                
+            }
+            catch (ArgumentException e)
+            {
+
+                
+            } 
+            catch (Exception e)
+            {
+
+                
+            }
+            finally
+            {
+
+            }
         }
     }
 }
