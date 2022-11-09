@@ -1,6 +1,9 @@
 ﻿using EmployeeList.Helpers;
 using EmployeeList.Helpers.MenyHelpers;
 using EmployeeList.UI;
+//using RobotHelper = EmployeeList.Helpers.Robot;
+
+
 
 namespace EmployeeList
 {
@@ -10,6 +13,11 @@ namespace EmployeeList
         //Får bara finnas EN!
         static void Main(string[] args)
         {
+            //object emp = new Employee("Kalle", 23);
+            //Console.WriteLine(emp.ToString());
+            var r = new EmployeeList.Helpers.Robot();
+            var r2 = new RobotHelper();
+            var r3 = new Robot("h", 45);
             //Instanseierar en Payroll och ett ConsoleUI
             IPayRoll payRoll = new PayRoll();
             IUI ui = new ConsoleUI();
