@@ -18,6 +18,7 @@ namespace EmployeeList
         {
             this.ui = ui;
             this.payRoll = payRoll;
+            var r = new RobotHelper();
         }
         public void Run()
         {
