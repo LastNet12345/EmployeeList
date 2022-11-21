@@ -8,7 +8,7 @@ namespace EmployeeList.XUnitTest
     public class UtilTests
     {
         [Fact]
-        public void AskForString_ShouldReturnString_WithOurMock()
+        public void AskForString_ShouldReturnString_WithOurMock() // Dåligt
         {
             const string expected = "NånInput";
             var mockUI = new MockUI();
@@ -20,7 +20,7 @@ namespace EmployeeList.XUnitTest
         }
 
         [Fact]
-        public void AskForString_ShouldReturnString_WithMoq()
+        public void AskForString_ShouldReturnString_WithMoq() // BRA
         {
             const string expected = "NånInput";
             var ui = new Mock<IUI>();
